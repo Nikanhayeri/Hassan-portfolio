@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hassan Hayeri — RF / Analog IC Designer</title>
+    <meta name="description" content="Portfolio of Hassan Hayeri — RF / Mixed‑Signal IC Designer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <div id="root"></div>
+    <script type="text/babel">
+      function Portfolio() {
+        const nav = [
+          { id: "about", label: "About" },
+          { id: "experience", label: "Experience" },
+          { id: "projects", label: "Projects" },
+          { id: "education", label: "Education" },
+          { id: "teaching", label: "Teaching" },
+          { id: "publications", label: "Publications" },
+          { id: "honors", label: "Honors" },
+          { id: "skills", label: "Skills" },
+          { id: "languages", label: "Languages" },
+          { id: "references", label: "References" },
+          { id: "contact", label: "Contact" },
+        ];
+
+        const contact = {
+          name: "Hassan Hayeri, M.Sc.",
+          title: "RF / Analog IC Designer",
+          phone: "+49 160 91497635",
+          email: "hassan.hayerih@gmail.com",
+          location: "Stuttgart, Germany",
+          linkedin: "https://www.linkedin.com/in/hassan-hayeri-44344976",
+        };
+
+        const summary =
+          "RF/Analog IC Designer with 6+ years of research experience — 3 years during M.Sc. and 3+ years in academia–industry collaborations. Completed three full‑chip tape‑outs in 40 nm CMOS and GaN: a 2.87 GHz fractional‑N PLL, an integrated 2.87 GHz transmitter for NV‑center sensing, and a highly‑efficient 18 GHz Class‑E GaN PA. Skilled in end‑to‑end development from schematic/layout to PCB implementation, SPI control, and silicon lab characterization.";
+
+        const experiences = [
+          {
+            company: "University of Stuttgart — Institute of Smart Sensors (IIS)",
+            role: "Academic Staff Member (RF/Mixed‑Signal IC)",
+            period: "2022 – Present",
+            location: "Stuttgart, Germany",
+            bullets: [
+              "Industrial collaboration with Bosch (Quantum Sensor Readout Circuitry).",
+              "2.87 GHz fractional‑N PLL in 40 nm TSMC CMOS: SPI control, evaluation PCB, comprehensive phase‑noise/spectrum testing, gain compression, and PAE characterization.",
+              "Integrated 2.87 GHz transmitter (passive mixer + Class‑E PA) for NV‑center sensing; high‑efficiency architecture with on‑chip control and measurement automation.",
+              "Collaboration with Quantum Brilliance (Quantum‑computing RF front‑end).",
+              "18 GHz Class‑E GaN PA: designed and taped out two prototypes for room‑temperature qubit control — baseline 300 mA @ 48% η; enhanced dual‑path with Wilkinson combiner achieving 500 mA @ 52% η; high‑frequency PCBs; time‑domain and S‑parameter validation.",
+            ],
+          },
+          {
+            company: "Selected R&D Projects",
+            role: "Research Highlights",
+            period: "—",
+            location: "—",
+            bullets: [
+              "Adaptive‑Reset Phase Detector for 10 GHz wide‑bandwidth PLLs in 22 nm GF CMOS: < 3 ps RMS jitter, ~600 MHz lock bandwidth @ 0.8 V (post‑layout).",
+              "High‑frequency PCB development & characterization for low‑noise sensing (e.g., NO‑tracking TIA; cryogenic electrical readout).",
+            ],
+          },
+        ];
+
+        const projects = [
+          { title: "2.87 GHz Fractional‑N PLL", stack: "40 nm TSMC • SPI • Phase‑Noise & Spectrum Tests", desc: "Designed, taped‑out, and measured a low‑noise PLL for NV‑center quantum sensors with full evaluation infrastructure." },
+          { title: "2.87 GHz Integrated Transmitter", stack: "40 nm CMOS • Passive Mixer • Class‑E PA", desc: "End‑to‑end transmitter chain for NV‑center sensing; high PAE and robust control/measurement." },
+          { title: "18 GHz Class‑E GaN PA (Dual‑Path + Wilkinson)", stack: "GaN • High‑current • 500 mA @ 52% η", desc: "Two GaN PA prototypes for qubit control; enhanced variant uses Wilkinson combination for higher current and efficiency." },
+          { title: "Broadband 22–30 GHz Limiter / LNA", stack: "mm‑Wave RX Front‑end • High Input Power Handling • Low NF", desc: "Broadband limiter/LNA concept for robust mm‑wave receivers with emphasis on blocker resilience." },
+          { title: "Common‑Gate LNA (180 nm CMOS)", stack: "NF ≈ 5.5 dB • Gain ≈ 12 dB", desc: "Designed, simulated, and laid out; verified with LVS/DRC." },
+          { title: "Transimpedance Amplifier (TIA)", stack: "Sensor/Photodiode Readout • Low‑Noise", desc: "Optimized bandwidth and gain stability for precision sensing." },
+          { title: "5 Gb/s CDR", stack: "Cadence & ADS • Half‑Rate Phase Detector", desc: "Clock and data recovery system with half‑rate PD architecture." },
+          { title: "Latch Comparator (180 nm CMOS)", stack: "VDD 1.8 V • Ip 26 pA • AVT 0.18 mV • LSB 10 mV • fclk 1 MHz", desc: "Designed and simulated; Monte‑Carlo mismatch analysis." },
+        ];
+
+        const education = [
+          { school: "M.Sc. in Electrical Engineering — Electronics", org: "Tarbiat Modares University", period: "2016 – 2019", details: ["GPA: 17.14 / 20", "Thesis: Analysis and Design of a Type‑I Integer‑N PLL for the 2.4 GHz Band in 65 nm CMOS."] },
+          { school: "B.Sc. in Electrical Engineering — Electronics", org: "Babol Noshirvani University of Technology", period: "2010 – 2015", details: ["Major GPA: 16.52 / 20", "Thesis: Low‑Power MEMS Gas Sensor based on ZnO Nanocrystalline Thin Films for Methane Detection."] },
+        ];
+
+        const teaching = [
+          { course: "RF CMOS (Teaching Assistant)", org: "University of Stuttgart", period: "Winter 2023 – Winter 2025", details: ["Supervised RF CMOS labs and measurements; automation scripts for sweeps; data analysis; student feedback."] },
+        ];
+
+        const publications = [
+          { title: "Sensing Weak Non‑Stationary Signals with an Integrated Magneto‑Optical Quantum Sensor", authors: "H. Hayeri, E. Corcione, O. von Berg, M. Kübler, J. Wrachtrup, C. Tarín, J. Anders", venue: "Poster — DFG Evaluation, University of Stuttgart", year: "Feb 2025" },
+        ];
+
+        const honors = [
+          { title: "Selected as a talented graduate by Iran’s National Elite Foundation", year: "—" },
+          { title: "Ranked top 0.5% in master entrance exam (~90,000 participants)", year: "—" },
+          { title: "Ranked top 2% in university entrance exam (~320,000 participants)", year: "—" },
+        ];
+
+        const skills = [
+          "IC Design: Cadence Virtuoso (ADE, Layout, DRC, LVS, RCX, post‑layout)",
+          "RF/mm‑Wave: LNA/PA, Mixers, PLLs",
+          "EM/Tools: ADS (Momentum), Sonnet, HFSS (co‑simulation)",
+          "PCB: Altium, multilayer assembly, HF boards",
+          "Lab: VNA, Spectrum/Phase‑Noise analyzers, load‑pull, time‑domain",
+          "Programming/Data: Python (NumPy, pandas, scikit‑learn, matplotlib), MATLAB (signal processing, PCA, regression), C++",
+        ];
+
+        const languages = [
+          { name: "English", level: "Fluent (C1)" },
+          { name: "German", level: "A1" },
+        ];
+
+        const references = [
+          { name: "Prof. Jens Anders", org: "Institute of Smart Sensors, University of Stuttgart", email: "jens.anders@iis.uni-stuttgart.de", address: "Pfaffenwaldring 47, 70569 Stuttgart, Germany" },
+          { name: "Dr. Amir Nikpaik", org: "Tarbiat Modares University", email: "nik@modares.ac.ir" },
+          { name: "Prof. Abdolreza Nabavi", org: "Tarbiat Modares University", email: "abdoln@modares.ac.ir" },
+        ];
+
+        return (
+          <div className="min-h-screen bg-gray-50 text-gray-900">
+            <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+              <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-2xl bg-gray-200" />
+                  <div>
+                    <h1 className="text-lg font-bold">{contact.name}</h1>
+                    <p className="text-sm text-gray-600">{contact.title} · {contact.location}</p>
+                  </div>
+                </div>
+                <nav className="hidden md:flex items-center gap-4">
+                  {nav.map((n) => (
+                    <a key={n.id} href={`#${n.id}`} className="text-sm hover:text-black">
+                      {n.label}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </header>
+
+            <section className="max-w-6xl mx-auto px-4 py-12" id="about">
+              <div className="grid md:grid-cols-3 gap-6 items-start">
+                <div className="md:col-span-2">
+                  <h2 className="text-3xl font-semibold mb-3">RF / Mixed‑Signal IC Designer</h2>
+                  <p className="text-gray-700 leading-7">{summary}</p>
+                  <div className="flex flex-wrap gap-3 mt-6">
+                    <a href={contact.linkedin} target="_blank" className="px-4 py-2 rounded-2xl bg-black text-white text-sm">LinkedIn</a>
+                    <a href={`mailto:${contact.email}`} className="px-4 py-2 rounded-2xl border text-sm">Email</a>
+                    <a href="#contact" className="px-4 py-2 rounded-2xl border text-sm">Hire / Collaborate</a>
+                  </div>
+                </div>
+                <div className="p-4 bg-white rounded-2xl shadow-sm border">
+                  <h3 className="font-medium mb-2">Quick Info</h3>
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li><span className="font-semibold">Phone:</span> {contact.phone}</li>
+                    <li><span className="font-semibold">Email:</span> {contact.email}</li>
+                    <li><span className="font-semibold">Location:</span> {contact.location}</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="experience" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">Experience</h3>
+              <div className="grid gap-4">
+                {experiences.map((exp, i) => (
+                  <div key={i} className="p-5 bg-white rounded-2xl border shadow-sm">
+                    <div className="flex items-center justify-between gap-4 flex-wrap">
+                      <div>
+                        <h4 className="text-lg font-semibold">{exp.role}</h4>
+                        <p className="text-gray-700">{exp.company}</p>
+                      </div>
+                      <div className="text-sm text-gray-600">{exp.period}</div>
+                    </div>
+                    <ul className="mt-3 list-disc ps-6 text-gray-700 space-y-1">
+                      {exp.bullets.map((b, j) => (<li key={j}>{b}</li>))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="projects" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">Projects</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {projects.map((p, i) => (
+                  <div key={i} className="p-5 bg-white rounded-2xl border shadow-sm">
+                    <h4 className="text-lg font-semibold">{p.title}</h4>
+                    <p className="text-sm text-gray-600 mt-1">{p.stack}</p>
+                    <p className="text-gray-700 mt-2">{p.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="education" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">Education</h3>
+              <div className="grid gap-4">
+                {education.map((e, i) => (
+                  <div key={i} className="p-5 bg-white rounded-2xl border shadow-sm">
+                    <h4 className="text-lg font-semibold">{e.school}</h4>
+                    <p className="text-gray-700">{e.org}</p>
+                    <div className="text-sm text-gray-600">{e.period}</div>
+                    <ul className="mt-3 list-disc ps-6 text-gray-700 space-y-1">
+                      {e.details?.map((d, j) => (<li key={j}>{d}</li>))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="teaching" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">Teaching</h3>
+              <div className="grid gap-4">
+                {teaching.map((t, i) => (
+                  <div key={i} className="p-5 bg-white rounded-2xl border shadow-sm">
+                    <h4 className="text-lg font-semibold">{t.course}</h4>
+                    <p className="text-gray-700">{t.org}</p>
+                    <div className="text-sm text-gray-600">{t.period}</div>
+                    <ul className="mt-3 list-disc ps-6 text-gray-700 space-y-1">
+                      {t.details?.map((d, j) => (<li key={j}>{d}</li>))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="publications" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">Publications</h3>
+              <div className="grid gap-4">
+                {publications.map((p, i) => (
+                  <div key={i} className="p-5 bg-white rounded-2xl border shadow-sm">
+                    <h4 className="text-lg font-semibold">{p.title}</h4>
+                    <p className="text-gray-700">{p.authors}</p>
+                    <p className="text-gray-700">{p.venue}</p>
+                    <div className="text-sm text-gray-600">{p.year}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="honors" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">Honors</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {honors.map((h, i) => (
+                  <div key={i} className="p-5 bg-white rounded-2xl border shadow-sm">
+                    <h4 className="text-lg font-semibold">{h.title}</h4>
+                    <div className="text-sm text-gray-600">{h.year}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="skills" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">Skills</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {skills.map((s, i) => (
+                  <div key={i} className="p-4 bg-white rounded-2xl border shadow-sm text-gray-800">{s}</div>
+                ))}
+              </div>
+            </section>
+
+            <section id="languages" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">Languages</h3>
+              <ul className="grid md:grid-cols-2 gap-4">
+                {languages.map((l, i) => (
+                  <li key={i} className="p-4 bg-white rounded-2xl border shadow-sm text-gray-800">
+                    <span className="font-semibold">{l.name}:</span> {l.level}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section id="references" className="max-w-6xl mx-auto px-4 py-10">
+              <h3 className="text-2xl font-semibold mb-6">References</h3>
+              <div className="grid gap-4">
+                {references.map((r, i) => (
+                  <div key={i} className="p-5 bg-white rounded-2xl border shadow-sm">
+                    <h4 className="text-lg font-semibold">{r.name}</h4>
+                    <p className="text-gray-700">{r.org}</p>
+                    {r.address && <p className="text-gray-700">{r.address}</p>}
+                    {r.email && <a className="text-sm text-blue-600" href={`mailto:${r.email}`}>{r.email}</a>}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="contact" className="max-w-6xl mx-auto px-4 py-12">
+              <div className="p-6 bg-black text-white rounded-3xl">
+                <h3 className="text-2xl font-semibold">Let’s work together</h3>
+                <p className="mt-2 text-white/80">For collaborations, PhD positions, or consulting, feel free to reach out.</p>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a href={`mailto:${contact.email}`} className="px-4 py-2 rounded-2xl bg-white text-black text-sm">{contact.email}</a>
+                  <a href={contact.linkedin} target="_blank" className="px-4 py-2 rounded-2xl border border-white text-sm">LinkedIn</a>
+                </div>
+              </div>
+              <footer className="text-center text-sm text-gray-500 mt-6 py-6">
+                © {new Date().getFullYear()} {contact.name}. All rights reserved.
+              </footer>
+            </section>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<Portfolio />);
+    </script>
+  </body>
+</html>
